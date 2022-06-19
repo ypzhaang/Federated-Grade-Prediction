@@ -1,0 +1,2 @@
+# Federated-Grade-Prediction
+利用联邦学习进行高校学生成绩预测研究，并使用Streamlit搭建了简易的可视化平台
