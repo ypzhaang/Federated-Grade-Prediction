@@ -37,7 +37,7 @@ if __name__ == '__main__':
     with col6:
         frac = st.slider('参与训练的比例', min_value=0.1, max_value=1.0, step=0.1)
         batch_size = st.slider('学习率', min_value=0.01, max_value=1.0, step=0.01)
-        alg = st.selectbox('联邦学习算法', ('联邦成绩预测算法', 'FedPer', 'FedAvg', 'FedProx', 'LG-Fed'))
+        alg = st.selectbox('联邦学习算法', [("联邦成绩预测")])
 
     if(choice_1=='主页'):
         st.title("联邦学习可视化平台")

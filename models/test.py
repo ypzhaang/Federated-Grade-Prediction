@@ -7,7 +7,6 @@
 
 import copy
 import numpy as np
-from matplotlib import rcParams
 import torch
 import matplotlib.pyplot as plt
 from torch import nn
@@ -70,14 +69,6 @@ def confusion_matrix(preds, labels, conf_matrix,flag=False):
 
 # 绘制混淆矩阵
 def plot_confusion_matrix(cm, classes, normalize=False, cmap=plt.cm.Blues):
-    config = {
-        "font.family": 'serif',
-        "font.size": 13,
-        "mathtext.fontset": 'stix',
-        "font.serif": ['SimSun'],
-    }
-    rcParams.update(config)
-
     """
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
@@ -104,8 +95,9 @@ def plot_confusion_matrix(cm, classes, normalize=False, cmap=plt.cm.Blues):
                  horizontalalignment="center",
                  color="white" if cm[i, j] > thresh else "black")
     plt.tight_layout()
-    plt.ylabel('真实标签')
-    plt.xlabel('预测标签')
+    plt.gcf().subplots_adjust(bottom=0.15)
+    plt.ylabel('True label')
+    plt.xlabel('Predict label')
     plt.savefig('./save/confusion_matrix.png', transparent=True, dpi=800)
     # plt.show()
 
